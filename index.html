@@ -6,42 +6,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <h1>Welcome visitors!</h1>
+<body class="bg-dark text-light">
 
-    <h2>About HTML</h2>
-    <p>This is a simple example of a web page created using HTML. Here I will tell you a little bit about HTML</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">My Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <h3>3 interesting facts:</h3>
-    <ul>
-        <li>HTML stands for HyperText Markup Language.</li>
-        <li>HTML is a text-based language, which means that it is made up of text and tags.</li>
-        <li>The first web page was created by Tim Berners-Lee in 1991.</li>
-    </ul>
 
-    <h4>Basic versions of HTML:</h4>
-    <ol>
-        <li>HTML 1.0, 2.0, 3.2, 4.01</li>
-        <li>XHTML</li>
-        <li>HTML5</li>
-    </ol>
+    <div class="container my-4">
+        <div class="card bg-secondary text-light">
+            <div class="card-body">
+                <h1 class="card-title text-center">Welcome Visitors!</h1>
 
-    <h5>All information was taken from here:</h5>
-    <p>You can familiarize yourself with it <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">here</a>. Glad to be of service!</p>
+                <h2>About HTML</h2>
+                <p>This is a simple example of a web page created using HTML. Here I will tell you a little bit about HTML.</p>
 
-    <h6>HTML5 logo:</h6>
-    <img src="HTML5_logo.png" alt="HTML5 logo" style="border: 1px solid #ccc;" width="200" height="200">
+                <h3>3 Interesting Facts:</h3>
+                <ul>
+                    <li>HTML stands for HyperText Markup Language.</li>
+                    <li>HTML is a text-based language, which means that it is made up of text and tags.</li>
+                    <li>The first web page was created by Tim Berners-Lee in 1991.</li>
+                </ul>
 
-    <h5>Confirm your acknowledgment:</h5>
-    <form>
-        <label>
-            <input type="checkbox" required> I have read and understood the information on this page.
-        </label>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+                <h4>Basic Versions of HTML:</h4>
+                <ol>
+                    <li>HTML 1.0, 2.0, 3.2, 4.01</li>
+                    <li>XHTML</li>
+                    <li>HTML5</li>
+                </ol>
 
+                <h5>All information was taken from here:</h5>
+                <p>You can familiarize yourself with it <a href="https://en.wikipedia.org/wiki/HTML" target="_blank" class="text-info">here</a>. Glad to be of service!</p>
+
+                <h6>HTML5 logo:</h6>
+                <img src="HTML5_logo.png" alt="HTML5 logo" class="img-fluid mx-auto d-block" width="200" height="200">
+
+                <h5>Confirm your acknowledgment:</h5>
+                <form>
+                    <label class="form-check-label">
+                        <input type="checkbox" required class="form-check-input"> I have read and understood the information on this page.
+                    </label>
+                    <button type="submit" class="btn btn-success mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
