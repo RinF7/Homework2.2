@@ -78,3 +78,25 @@ button:hover {
         padding: 0 10px;
     }
 }
+
+.modal-header {
+    background-color: #b3b3b3;
+    color: white;
+}
+
+.modal-body {
+    background-color :#b3b3b3;
+    color: #333;
+}
+
+.modal-footer {
+    background-color: #b3b3b3;
+}
+
+.modal-footer .btn-primary {
+    background-color: #27ae60;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #e74c3c;
+}
