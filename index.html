@@ -6,32 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-dark text-light">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">My Website</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container my-4">
         <div class="card bg-secondary text-light">
@@ -68,13 +67,73 @@
                     </label>
                     <button type="submit" class="btn btn-success mt-3">Submit</button>
                 </form>
+
+                <div id="colorBlock" class="my-4 p-4 text-center" style="cursor: pointer; background-color: #3498db; color: white;">
+                    Click me to change color and text!
+                </div>
+
+                <button id="addElementBtn" class="btn btn-primary mt-3">Add carrots</button>
+                <div id="newElementsContainer" class="mt-4"></div>
+
+                <div class="mt-4">
+                    <label for="toggleSwitch" class="form-label">Enable feature:</label>
+                    <input type="checkbox" id="toggleSwitch" class="form-check-input">
+                    <p id="toggleStatus">Feature is off.</p>
+                </div>
+
+                <button class="btn btn-info mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Open Modal</button>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Functionality will appear in the future</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Common use of the Modal
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const colorOptions = [
+            { background: '#3498db', text: 'Click me to surprise!'},
+            { background: '#e74c3c', text: 'Now I am red, thx ♥.'},
+            { background: '#2ecc71', text: 'Green!!!'},
+            { background: '#f39c12', text: 'Yellow one, keep going!'}
+            ]
+
+        let currentIndex = 0;
+
+        document.getElementById('colorBlock').addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % colorOptions.length;
+            this.style.backgroundColor = colorOptions[currentIndex].background;
+            this.textContent = colorOptions[currentIndex].text;
+        });
+
+        document.getElementById('addElementBtn').addEventListener('click', function() {
+            const newElement = document.createElement('div');
+            newElement.classList.add('alert', 'alert-info');
+            newElement.textContent = '+carrot!';
+            document.getElementById('newElementsContainer').appendChild(newElement);
+        });
+
+        document.getElementById('toggleSwitch').addEventListener('change', function() {
+            const status = this.checked ? 'Feature is on.' : 'Feature is off.';
+            document.getElementById('toggleStatus').textContent = status;
+        });
+    </script>
 </body>
 
 </html>
